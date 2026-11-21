@@ -34,7 +34,9 @@
 
 Different utterances favor different modalities: when the transcript is ambiguous, acoustic and visual cues are indispensable, whereas when the text alone is expressive, the extra modalities are redundant, may interfere, and cost most of the inference time. EmoRouter sends each utterance through a cascade of increasingly expensive modality tiers, **T → T+A → T+A+V**, and exits at the first tier whose **conformal prediction (CP) set** contains a single emotion. The per-tier error budgets $(\alpha_1, \alpha_2)$ are chosen by **Conformal Set Contraction (CSC)**, a structural criterion computed on calibration data only:
 
-$$(\alpha_1^*, \alpha_2^*) = \arg\max_{\alpha \in \mathcal{A}} \text{CSC}(\alpha;\ \mathcal{D}_{\text{cal}})$$
+```math
+(\alpha_1^{\ast}, \alpha_2^{\ast}) = \arg\max_{\alpha \in \mathcal{A}} \text{CSC}(\alpha;\ \mathcal{D}_{\text{cal}})
+```
 
 Across 4 MER benchmarks and 3 Omni-LLMs, EmoRouter matches or outperforms full-modality inference while reducing inference latency by 68.8–94.6%.
 
@@ -111,7 +113,7 @@ MODEL_PATH=/path/to/Qwen2.5-Omni-7B SERVED_NAME=qwen2.5-omni TAG=qwen25 bash scr
 
 ## 🧭 Route with EmoRouter
 
-Routing runs offline on the saved probabilities, so no GPU is needed. CSC searches $\alpha_1, \alpha_2 \in \{0.1, 0.3, 0.5, 0.7, 0.9\}$ on the calibration split, and the test utterances are then routed:
+Routing runs offline on the saved probabilities, so no GPU is needed. CSC searches $\alpha_1, \alpha_2 \in \lbrace 0.1, 0.3, 0.5, 0.7, 0.9 \rbrace$ on the calibration split, and the test utterances are then routed:
 
 ```bash
 python router/emorouter.py --pred_dir outputs/meld_qwen25 --dataset meld
