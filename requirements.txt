@@ -1,0 +1,15 @@
+# inference (client side)
+openai>=1.40
+numpy
+pandas
+opencv-python
+pillow
+soundfile
+librosa
+h5py
+tqdm
+decord          # optional; CH-SIMS frame sampling falls back to OpenCV
+# routing / evaluation
+scikit-learn
+# serving the Omni-LLM (separate environment recommended)
+# vllm==0.8.5
