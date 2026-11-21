@@ -119,14 +119,6 @@ Routing runs offline on the saved probabilities, so no GPU is needed. CSC search
 python router/emorouter.py --pred_dir outputs/meld_qwen25 --dataset meld
 ```
 
-```
-alpha_1=0.100  alpha_2=0.900  (selected by CSC)
-T only : wF1=60.6
-T+A+V  : wF1=61.4
-EmoRouter: wF1=63.3  LRR=89.0%  U_t=24.9
-exit at T / T+A / T+A+V: 19.0% / 81.0% / 0.0%
-```
-
 Use `--alpha1/--alpha2` to fix the budgets instead of selecting them with CSC. We report weighted F1 (wF1), the latency reduction rate relative to always running T+A+V (LRR), and the time utility $U_t = (\text{wF1} - \text{wF1}_{\text{T}}) / (1 - \text{LRR})$.
 
 ## 📖 Citation
