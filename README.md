@@ -1,5 +1,5 @@
 <h1 align="center">
-  EmoRouter: Adaptive Modality Selection for Multimodal Emotion Recognition
+  EmoRouter: Adaptive Modality Cascading for Multimodal Emotion Recognition
 </h1>
 
 <p align="center">
