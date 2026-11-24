@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  📄 <a href="#"><strong>Paper</strong></a> (coming soon)
+  📄 <a href="https://arxiv.org/abs/2611.28960"><strong>Paper</strong></a>
 </p>
 
 <p align="center">
